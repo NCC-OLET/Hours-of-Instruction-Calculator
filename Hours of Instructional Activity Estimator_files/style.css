@@ -1,0 +1,653 @@
+/******************************************************************* 
+* CSS Stylesheet for the HIA Estimator Web App 
+* Copyright Penn State
+* Developed by Sarah Kettell
+********************************************************************/
+
+/* -----------------  Default Styles  ------------------ */
+html, body{
+	width:100%;
+	height:100%;
+	margin: 0;
+	font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+	color:#54585A;
+	font-size: 11pt;
+}
+h1, h2, h3, h4 {
+	font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+	color: #001E44;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-weight: 600;
+	margin: 0;
+}
+ol, ul{
+	margin:0;
+	padding:0;
+}
+.bold {
+	font-weight: 600;
+}
+.tip{
+	font-size: 8pt;
+	text-align: center;
+}
+#back_to_psu_button{
+	display: block;
+	padding: 10px;
+	color:#FFFFFF;
+	background: #1E407C;
+	border: 1px solid #001E44;
+	/*border-radius: 5px;*/
+	font-size: 1em;
+	text-decoration: none;
+}
+#back_to_psu_button:hover, #back_to_psu_button:focus {
+	color: #009CDE;
+}
+#hia-app-footer{
+	text-align: center;
+}
+/* -----------------  Main App Containers  ------------------ */
+#container{
+	display: flex;
+	flex:1;
+	flex-direction: column;
+	align-items: stretch;
+	padding: 20px;
+	justify-content: space-around;
+	background: none;
+}
+.about_container{
+	display: flex;
+	flex-direction: row;
+	background: none;
+	padding: 10px 20px 0 20px;
+	margin: 20px 20px 0 20px;
+	color:#333333;
+}
+.dynamic_content_container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.activity_container{
+	display: flex;
+	flex:3 1 60%;
+	flex-direction:column;
+	background: rgba(145,149,156,0.2);
+	padding:0 20px;
+	margin: 0 10px;
+	background: white;
+}
+/* --------------  Information Container  --------------- */
+.about_container h1{
+	color: #1B73B4;
+	text-transform: none;
+	font-size: 2.5em;
+	font-weight: 400;
+	letter-spacing: 0.02em;
+}
+.about_container p{
+	font-size: 1.1em;
+}
+
+/* -----------------  Category Headers  ------------------ */
+h2 .category_header, h2 button{
+	background: #001E44;
+	font-family: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	font-weight: inherit;
+	color:#FFFFFF;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding:20px;
+	display: inline-flex;
+	justify-content: space-between;
+	position: relative;
+	border:none;
+	font-size: 1em;
+	text-transform: inherit;
+
+}
+.category_title {
+	display: block;
+	margin-right: 50px;
+	padding-right: 50px;
+}
+.category_container{
+	margin: 0 0 10px 0;
+}
+
+.category_container:last-of-type{
+	margin: 0;
+}
+
+[aria-expanded="true"] .vert {
+  display: none;
+}
+[aria-expanded] rect {
+  fill: currentColor;
+}
+h2 button:focus svg {  
+  outline: 1px solid;
+}
+h2 button svg {
+	position: absolute;
+	top: 25px;
+	right: 20px;
+}
+
+/* -----------------  Activity Boxes  ------------------ */
+h3, .activity_header{
+	padding: 0 15px 0 0;
+	margin: 0;
+	font-weight: 600;
+}
+.activity_set{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+	background: rgba(145,149,156,0.2);
+	padding:10px;
+}
+.activity{
+	flex:1 0;
+	flex-grow: 1;
+	background: #ffffff;
+	padding: 10px;
+	margin: 10px;
+	min-width: 175pt;
+	max-width: 45%;
+	font-size: 10pt;
+	position: relative;
+	list-style: none;
+	border: 1px solid lightgrey;
+}
+.delete {
+	position: absolute;
+	top:2px;
+	right:6px;
+	background: none;
+	border: none;
+	font-weight: bold;
+	font-size: 24px;
+	overflow: hidden;
+	width: 1.2em;
+	height: 1.2em;
+}
+.svg_delete{
+	width: .5em;
+	height: .5em;
+}
+.svg_delete path{
+	fill:#000;
+	d: path("M11.469,10l7.08-7.08c0.406-0.406,0.406-1.064,0-1.469c-0.406-0.406-1.063-0.406-1.469,0L10,8.53l-7.081-7.08c-0.406-0.406-1.064-0.406-1.469,0c-0.406,0.406-0.406,1.063,0,1.469L8.531,10L1.45,17.081c-0.406,0.406-0.406,1.064,0,1.469c0.203,0.203,0.469,0.304,0.735,0.304c0.266,0,0.531-0.101,0.735-0.304L10,11.469l7.08,7.081c0.203,0.203,0.469,0.304,0.735,0.304c0.267,0,0.532-0.101,0.735-0.304c0.406-0.406,0.406-1.064,0-1.469L11.469,10z");
+}
+.activity label{
+	float:left;
+	display: block;
+	position: relative;
+	width: 100%;
+	margin-bottom: 8px;
+}
+.activity form{
+	position: relative;
+}
+.activity input{
+	border: 1px inset grey;
+	border-radius: 2px;
+}
+.activity .text {
+	width: 50%;
+	display: block;
+	float:left;
+}
+.activity input[type=text],.activity input[type=number],.activity select{
+	width: 40%;
+	display: block;
+	float:right;
+	vertical-align: center;
+	position: absolute;
+	top:50%;
+	right:0px;
+	transform: translate(0%, -50%);
+}
+.activity input[type=checkbox]{
+	float: right;
+	width: auto;
+}
+.activity .checkbox{
+	width: 90%;
+	float: left;
+	display: block;
+}
+
+/* ------------  Course Details & Results  -------------- */
+.result_header{
+	background: none;
+	margin: 0 0 6px 0;
+	padding: 0;
+	display: block;
+	color:#001E44;
+	font-size: 1.3em;
+}
+.result_container{
+	flex:1 1 20%;
+	position: sticky;
+	/*padding: 20px;*/
+	margin: 0 20px 10px 10px;
+	min-width:250pt;
+	max-width: 20%;
+	background: none;
+}
+.course_details{
+	padding: 20px;
+	margin: 0 0 20px 0;
+	background: rgba(145,149,156,0.2);
+	background: white;
+	border: 1px solid lightgrey;
+}
+.course_details input{
+	width:20%;
+}
+.course_details .text{
+	display: block;
+	float:left;
+	width: 75%;
+}
+.course_details p{
+	font-weight: 600;
+	width: 100%;
+}
+.estimated_time{
+	flex:1 1 100%;
+	position: sticky;
+}
+.result_sticky {
+	top: 10px;
+	position: sticky;
+	padding: 0;
+}
+.result_calculations p{
+	margin-top:6px 0 0 0;
+	margin-block-start:.5em;
+	padding-top: 0;
+}
+.result_calculations h3 {
+	font-style: strong;
+	margin:16px 0 0 0;
+	padding-top:4px;
+}
+#chart_container {
+	max-width: 100%;
+	height: auto;
+	padding-top: 10pt;
+}
+.chart {
+	padding: 20px;
+	border: 1px solid lightgrey;
+	border-bottom: none;
+}
+.result_calculations{
+	padding:10px 20px 10px 20px;
+	border: 2px solid #001E44;
+}
+
+/*---------- Results Viewboxes ------------*/
+
+.view_tab {
+	display:flex;
+	background: white;
+	justify-content: space-around;
+	position: relative;
+}
+
+.view_tab button{
+	width: 100%;
+	padding:15px 10px 15px 10px;
+	font-size: 9pt;
+	font-weight: 600;
+	letter-spacing: 1pt;
+	border: none;
+	text-transform: uppercase;
+	border-top:2px solid white;
+}
+
+.view_tab .selected{
+	background: #001E44;
+	color: white;
+	border-top:none;
+}
+
+.view_tab button:hover{
+	background: darkgrey;
+	cursor: pointer;
+	color: white;
+}
+
+#semester_viewbox.visible, #week_viewbox.visible{
+	display: block;
+}
+
+#semester_viewbox.hidden, #week_viewbox.hidden{
+	display: none;
+}
+
+/* ------------  Add More Activities  -------------- */
+.add_activities h2 button:focus svg {  
+  outline: 1px solid;
+}
+.add_activities h2 button svg {
+	position: relative;
+	top:0;
+	right:24px;
+}
+.add_activities h2{
+	background: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.add_activities h2 button{
+	margin: 0;
+	padding: 10px 0px 10px 24px;
+	font-size: 0.7em;
+	width:100%;
+	color:#FFFFFF;
+	background: #1E407C;
+	border: 1px solid #001E44;
+}
+.add_activities{
+	padding-bottom: 20px;
+}
+.add_activities p{
+	background: rgba(145,149,156,0.2);
+	padding: 10px;
+	margin-top: 0;
+}
+.add_button {
+	margin: 0px 6px 4px 0px;
+	padding: 3px 6px 3px 6px;
+	font-size:0.8em;
+	color:#FFFFFF;
+	background: #1E407C;
+	border: 1px solid #001E44;
+	border-radius: 5px;
+}
+#add_alert{
+	color:#ffffff;
+	font-weight: 600;
+	font-size: 0.9em;
+	position: fixed;
+	bottom:10px;
+	right:0px;
+	list-style: none;
+	z-index: 1;
+	margin:0;
+	padding:0;
+}
+#add_alert li{
+	width: 250px;
+	padding: 10px;
+	margin:0 0 6px 0;
+	background: #3EA39E;
+	text-align: center;
+	border: 1px solid #ffffff;
+}
+.add_button:hover, .add_button:focus {
+	background: #009CDE;
+	border: 1px solid #001E44;
+	border-radius: 6px;
+}
+
+/* ------------  Export/Import  -------------- */
+.buttons h2{
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 1.3em;
+}
+
+.buttons {
+	border: 1px solid lightgrey;
+	padding:20px;
+	margin: 20px 0 0 0;
+}
+
+#importFileSelector{
+	display: none;
+}
+#importLabel {
+	display: block;
+	width: 45%;
+	height:44px;
+	background: #BC204B;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 10pt;
+	line-height: 1.2em;
+	margin-top:10px;
+	padding-top:12px;
+	text-align: center;
+	border: 2px outset #b87789;
+	border-radius: 5px;
+	padding-right: 10px;
+	float:right;
+}
+.download{
+	width: 100%;
+	height:4em;
+	background: #BC204B;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 10pt;
+	margin-top:10px;
+	border: 2px outset #b87789;
+	border-radius: 5px;
+	height:60px;
+}
+.download:hover, #importLabel:hover {
+	background: #e04370;
+} 
+.download:focus, #importLabel:focus {
+	background: #e04370;
+	border: 2px inset #b87789;
+} 
+.export_button{
+	width: 48%;
+}
+.export_button svg{
+	width: 2em;
+	height: 2em;
+	float:left;
+}
+.export_button path{
+	fill:#fff;
+	d: path("M17.064,4.656l-2.05-2.035C14.936,2.544,14.831,2.5,14.721,2.5H3.854c-0.229,0-0.417,0.188-0.417,0.417v14.167c0,0.229,0.188,0.417,0.417,0.417h12.917c0.229,0,0.416-0.188,0.416-0.417V4.952C17.188,4.84,17.144,4.733,17.064,4.656M6.354,3.333h7.917V10H6.354V3.333z M16.354,16.667H4.271V3.333h1.25v7.083c0,0.229,0.188,0.417,0.417,0.417h8.75c0.229,0,0.416-0.188,0.416-0.417V3.886l1.25,1.239V16.667z M13.402,4.688v3.958c0,0.229-0.186,0.417-0.417,0.417c-0.229,0-0.417-0.188-0.417-0.417V4.688c0-0.229,0.188-0.417,0.417-0.417C13.217,4.271,13.402,4.458,13.402,4.688");
+}
+#import_svg{
+	width: 1.8em;
+	height: 1.8em;
+	float:left;
+	padding-left: 10px;
+	padding-right:6px;
+	padding-top: 4px;
+}
+#import_svg path{
+	fill:#fff;
+	d: path("M19.521,7.267c-0.144-0.204-0.38-0.328-0.631-0.328h-3.582l-0.272-1.826c-0.055-0.379-0.379-0.656-0.76-0.656H9.802l-0.39-0.891c-0.123-0.279-0.399-0.46-0.704-0.46H1.11c-0.222,0-0.434,0.096-0.58,0.264C0.385,3.537,0.319,3.76,0.349,3.981l1.673,12.243c0,0,0,0,0,0.002v0.004c0.015,0.113,0.06,0.213,0.119,0.303c0.006,0.009,0.006,0.023,0.012,0.033c0.012,0.016,0.033,0.024,0.046,0.04c0.054,0.065,0.114,0.118,0.185,0.161c0.027,0.018,0.051,0.035,0.078,0.048c0.099,0.045,0.206,0.078,0.32,0.078h0.002l0,0h13.03c0.323,0,0.611-0.201,0.722-0.505l3.076-8.416C19.698,7.735,19.663,7.474,19.521,7.267z M8.203,4.644l0.391,0.889c0.123,0.279,0.399,0.461,0.704,0.461h4.315l0.141,0.944H5.859c-0.323,0-0.611,0.201-0.723,0.505l-2.011,5.505L1.992,4.644H8.203z M15.276,15.356H3.882l2.515-6.879H17.79L15.276,15.356z");
+}
+#error{
+	display: block;
+	width: 300px;
+	background: white;
+	position: absolute;
+	bottom:0;
+	left:50%;
+	margin-left: -150px;
+	z-index: 1;
+	padding: 10px 20px 20px 20px;
+	border: 4px solid #BC204B;
+	font-weight: 600;
+}
+#error button {
+	position: relative;
+	left:50%;
+	width: 50px;
+	margin-left: -25px;
+	padding: 6px;
+}
+.hide {
+	display: none;
+}
+
+
+/* ------------  Print Styles  -------------- */
+@media print {
+	h1{font-size: 1.6em;}
+	/* Sections to remove for print */
+	.add_activities, .category-expandbutton, .delete, .more_options, .tip, .buttons, #dev_info, .view_tab {display: none;}
+	/* Sections altered for print */
+	.collapse_container{display: inline;}
+	#container, .about_container, .dynamic_content_container, .activity_container, .result_container {display: block; background: none;}
+	.activity_set{flex:none; display: block;}
+	.activity{display: inline-block; flex:none; width: 95%; max-width:95%; page-break-inside: avoid;}
+	a:after {content: " [" attr(href) "] ";}
+	h2, h3{page-break-after: avoid;}
+	.chart{width:100%; margin:0; padding:20px; border:none;}
+	.result_container{display:block; flex:none; max-width: 100%; page-break-inside: avoid;}
+	.result_calculations{width: 60%; margin:0; padding:0; margin-left:10px; border:none;}
+	#chart_container{max-width: 80%; width: 80%;}
+	.result_container h3{margin:0;}
+
+}	
+/* -------  Smaller Desktop Screen Styles ----------- */
+@media screen and (min-width: 700px) and (max-width: 1026px){
+	.result_container {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		min-width:94%; 
+		margin: 0 10px 0 10px;
+		padding: 20px;
+	}
+	.more_options {
+		min-width: 45%; 
+		max-width: 100%;
+	}
+/*	#chart_container {
+		max-width: 300px;
+		position: relative;
+		left:50%;
+		margin-left: -150px;
+	}*/
+	#importLabel span, .export_button span{
+		display: block;
+		padding-top: 6px;
+	}
+	.estimations_container{
+		width: 100%;
+		display: flex;
+		align-items:stretch;
+		border:1px solid darkgrey;
+	}
+	.chart{
+		width: 35%;
+		border-right: 2px solid lightgrey;
+	}
+	.viewbox_container{
+		width: 60%;
+		height: 100%;
+		position: relative;
+	}
+	.buttons{
+		flex:none;
+		display:block;
+	}
+	.results_calculations{
+		height: inherit;
+	}
+	.course_details h2{
+		text-align: center;
+	}
+	.course_details form{
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+	}
+	.course_details form label {
+		width: auto;
+		align-content: center;
+	}
+	.course_details form label .text{
+		width: auto;
+		padding-right: 15px;
+	}
+	.result_calculations{
+		border:none;
+	}
+	.download{
+		flex:1;
+		width: 32%;
+	}
+	#importLabel{
+		width: 32%;
+		flex:1;
+	}
+	.export_button{
+		margin-left:10px;
+	}
+}
+
+@media screen and (max-width: 699px){
+	.result_container {
+		display: default;
+		flex-direction: column;
+		max-width:100%; 
+		min-width:default;
+		margin: 0 10px 0 10px;
+	}
+	.activity{
+		min-width: 93%;
+	}
+	.activity_container{
+		padding: 0 0 20px 0;
+	}
+	#chart_container {
+		max-width: 300px;
+		position: relative;
+		left:50%;
+		margin-left: -150px;
+	}	
+	#importLabel span, .export_button span{
+		display: block;
+		padding-top: 6px;
+	}
+}
+
+/* -------  Mobile Touch Screen Styles ----------- */
+
+@media only screen and (hover:none){
+	body {
+		font-size: 1em;
+	}
+	input, select, h2, .activity{
+		font-size: 1em;
+	}
+	.activity{
+		min-width: 45%;
+	}
+	.result_container{
+		max-width:100%; 
+		min-width:default;
+		flex-direction: column;
+	}
+	.more_options{
+		max-width: inherit;
+	}
+
+}
