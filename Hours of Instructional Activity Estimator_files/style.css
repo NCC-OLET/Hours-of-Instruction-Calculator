@@ -36,7 +36,7 @@ ol, ul{
 	display: block;
 	padding: 10px;
 	color:#FFFFFF;
-	background: #BC204B;
+	background: #1E407C;
 	border: 1px solid #001E44;
 	/*border-radius: 5px;*/
 	font-size: 1em;
@@ -357,7 +357,7 @@ h3, .activity_header{
 	font-size: 0.7em;
 	width:100%;
 	color:#FFFFFF;
-	background: #BC204B;
+	background: #1E407C;
 	border: 1px solid #001E44;
 }
 .add_activities{
@@ -373,7 +373,7 @@ h3, .activity_header{
 	padding: 3px 6px 3px 6px;
 	font-size:0.8em;
 	color:#FFFFFF;
-	background: #BC204B;
+	background: #1E407C;
 	border: 1px solid #001E44;
 	border-radius: 5px;
 }
@@ -423,7 +423,7 @@ h3, .activity_header{
 	display: block;
 	width: 45%;
 	height:44px;
-	background: #BC204B;
+	background: #1E407C;
 	color: #FFFFFF;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -440,7 +440,7 @@ h3, .activity_header{
 .download{
 	width: 100%;
 	height:4em;
-	background: #BC204B;
+	background: #1E407C;
 	color: #FFFFFF;
 	text-transform: uppercase;
 	font-weight: 600;
@@ -491,7 +491,7 @@ h3, .activity_header{
 	margin-left: -150px;
 	z-index: 1;
 	padding: 10px 20px 20px 20px;
-	border: 4px solid #BC204B;
+	border: 4px solid #1E407C;
 	font-weight: 600;
 }
 #error button {
