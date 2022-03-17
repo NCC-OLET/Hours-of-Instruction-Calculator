@@ -451,10 +451,10 @@ h3, .activity_header{
 	height:60px;
 }
 .download:hover, #importLabel:hover {
-	background: #e04370;
+	background: #001E44;
 } 
 .download:focus, #importLabel:focus {
-	background: #e04370;
+	background: #001E44;
 	border: 2px inset #b87789;
 } 
 .export_button{
